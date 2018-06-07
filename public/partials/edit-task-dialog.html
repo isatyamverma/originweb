@@ -1,0 +1,78 @@
+<!-- Add worksheet dialog -->
+<md-dialog aria-label="updatePermission" class="dialog-size">
+    <form ng-submit="editTask(taskDetails)">
+        <div ng-cloak layout="column">
+            <div layout="row" flex=30 flex-offset="5" layout-align="start center" class="dialog-header">
+                Task
+            </div>
+
+            <md-dialog-content flex=80 layout="row" layout-align="center center">
+                <div layout="column" flex="80">
+                    <div layout="column">
+                        <span flex="30">
+                            <label class="label-style">Name</label>
+                        </span>
+                        <span flex="30">
+                            <input type="text" ng-model="taskDetails.name" class="input-class" />
+                        </span>
+                    </div>
+
+                    <div layout="column">
+                        <span flex="30">
+                            <label class="label-style">Description</label>
+                        </span>
+                        <span style="margin-top: 10px;" flex="30">
+                            <input type="text" ng-model="taskDetails.description" class="input-class" />
+                        </span>
+                    </div>
+
+                </div>
+            </md-dialog-content>
+        </div>
+        <md-dialog-actions layout="row" layout-align="end" class="dialog-action-alignment">
+            <md-button ng-if="!taskDetails.id" type="submit" class="md-primary plot-btn md-raised">
+                Add
+            </md-button>
+            <md-button ng-if="taskDetails.id" type="submit" class="md-primary plot-btn md-raised">
+                Update
+            </md-button>
+            <md-button ng-click="cancel()" class="md-warn md-raised">
+                Close
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>
+<!-- End of add worksheet dialog -->
+
+<style>
+
+.dialog-header {
+    padding: 20px 0 20px 0;
+    color: $blue;
+    font-size: 14pt;
+}
+
+.input-class,
+.input:focus {
+    color: #373e44;
+    width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid blue;
+    outline: -webkit-focus-ring-color auto 0px;
+}
+
+.label-style {
+    font-size: 10pt;
+    color: $label-blue;
+}
+
+.dialog-action-alignment {
+    padding-top: 20px
+}
+.dialog-size {
+    min-width: 450px;
+}
+
+</style>
