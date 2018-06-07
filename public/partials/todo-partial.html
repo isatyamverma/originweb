@@ -3,14 +3,14 @@
     <div style="width: 50%;" layout="row" layout-align="space-between center">
 
         <md-select ng-model="selectededFilter" placeholder="Apply Filters">
-            <md-option ng-value="'DONE'" >COMPLETED</md-option>
-            <md-option ng-value="'NOTDONE'" >INCOMPLETE</md-option>
-            <md-option ng-value="" >ALL</md-option>
+            <md-option ng-value="'DONE'">COMPLETED</md-option>
+            <md-option ng-value="'NOTDONE'">INCOMPLETE</md-option>
+            <md-option ng-value="">ALL</md-option>
 
         </md-select>
 
         <md-button ng-click="editTask({})" class="md-icon-button md-primary" aria-label="Settings">
-            <i style="font-size: 30px;" class="fa fa-plus-square"></i>
+            <i class="fa fa-plus-square fontsize30"></i>
         </md-button>
 
 
@@ -18,12 +18,9 @@
 
 
     <div flex="50" layout="column" layout-align="center center">
-        <md-card layout="row" ng-repeat="task in taskList | filter:{ status: selectededFilter}:true" style="height: 85px;    width: 50vw;" flex>
-            <!--<md-card-title style="padding: 12px 12px 8px;">-->
-            <!--<md-card-title-text>-->
+        <md-card layout="row" ng-repeat="task in taskList | filter:{ status: selectededFilter}:true" class="todo-task-card-size" flex>
             <div flex="85">
-                <div layout="row"
-                     style="font-size: 16px;white-space: nowrap;overflow: hidden; text-overflow: ellipsis; margin:10px">
+                <div layout="row" class="task-head-style">
 
                     <b><span>
                         {{task.name}}
@@ -32,9 +29,7 @@
                     </md-tooltip>
 
                 </div>
-                <!--</md-card-title-text>-->
-                <!--</md-card-title>-->
-                <md-card-content style="font-size: 14px;line-height: 14px; padding:10px">
+                <md-card-content class="task-desc-style">
                     <p>
                         {{task.description}}
                     </p>
@@ -42,20 +37,18 @@
                 </md-card-content>
             </div>
             <div layout="column" flex="15">
-            <md-card-actions layout="row" flex="80">
-                <!--<md-checkbox style="padding:0px;margin:0px;margin-right: 10px;" type="checkbox"></md-checkbox>-->
+                <md-card-actions layout="row" flex="80">
 
-                <md-button ng-click="deleteTask(task, $index)" class="md-icon-button" aria-label="Favorite">
-                    <i class="fa fa-trash" style="color: red;"></i>
-                </md-button>
-                <md-button ng-click="editTask(task, $index)" class="md-icon-button md-primary" aria-label="Settings">
-                    <i class="fa fa-edit"></i>
-                </md-button>
-                <input ng-click="setTaskDone(task)" ng-disabled="task.status=='DONE'" ng-checked="task.status=='DONE'" type="checkbox" name="vehicle" value="Bike">
-            </md-card-actions>
+                    <md-button ng-click="deleteTask(task, $index)" class="md-icon-button" aria-label="Favorite">
+                        <i class="fa fa-trash red-color"></i>
+                    </md-button>
+                    <md-button ng-click="editTask(task, $index)" class="md-icon-button md-primary" aria-label="Settings">
+                        <i class="fa fa-edit"></i>
+                    </md-button>
+                    <input ng-click="setTaskDone(task)" ng-disabled="task.status=='DONE'" ng-checked="task.status=='DONE'" type="checkbox" name="vehicle" value="Bike">
+                </md-card-actions>
 
-
-                <span style="margin:8px; color:rgb(252, 123, 15);text-overflow: ellipsis;white-space:nowrap;font-size: 10px;"><i style="margin-left: 20px;" class="fa fa-user"></i> {{task.owner.name}}</span>
+                <span class="username-style orange-color"><i style="margin-left: 20px;" class="fa fa-user"></i> {{task.owner.name}}</span>
 
             </div>
 

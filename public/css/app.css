@@ -4,3 +4,56 @@
 .loginBox {
   max-width: 90%;
   width: 500px; }
+
+.dialog-header {
+  padding: 20px 0 20px 0;
+  font-size: 14pt; }
+
+.input-class, .input:focus {
+  color: #373e44;
+  width: 100%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid blue;
+  outline: -webkit-focus-ring-color auto 0px; }
+
+.label-style {
+  font-size: 10pt; }
+
+.dialog-action-alignment {
+  padding-top: 20px; }
+
+.dialog-size {
+  min-width: 450px; }
+
+.fontsize30 {
+  font-size: 30px; }
+
+.todo-task-card-size {
+  height: 85px;
+  width: 50vw; }
+
+.task-head-style {
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 10px; }
+
+.task-desc-style {
+  font-size: 14px;
+  line-height: 14px;
+  padding: 10px; }
+
+.orange-color {
+  color: #fc7b0f; }
+
+.red-color {
+  color: red; }
+
+.username-style {
+  margin: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 10px; }
